@@ -1,8 +1,9 @@
 // Server-side page component
 import Spline from '@splinetool/react-spline';
-import { Activity, Zap, Cpu, Wifi, Globe, Target } from 'lucide-react';
+import { Cpu } from 'lucide-react';
+import { CloseableHUDPanels } from './components/CloseableHUDPanels';
 
-export default async function Home() {
+export default function Home() {
   return (
     <div className="relative w-[100vw] h-[100vh] bg-black overflow-hidden">
       {/* Enhanced CSS-Only Loading Screen - Disappears after 6 seconds */}
@@ -107,163 +108,124 @@ export default async function Home() {
         </div>
       </div>
 
-      {/* Main Content - Visible after loading */}
-      <div className="main-content opacity-0">
-        {/* Enhanced Cyberpunk Container */}
-        <div className="cyberpunk-container relative w-full h-full">
-          {/* Advanced Background Effects */}
-          <div className="background-effects">
-            <div className="grid-background"></div>
-            <div className="energy-streams"></div>
-            <div className="holographic-overlay"></div>
-          </div>
+      {/* Main Content - Framed Spline Scene with HUD Overlays */}
+      <div className="main-content opacity-0 relative w-full h-full p-6">
+        {/* Main HUD Frame Container */}
+        <div className="hud-frame-container relative w-full h-full">
           
-          {/* Enhanced Corner Decorations with Animations */}
-          <div className="corner-decoration-enhanced top-left">
-            <div className="corner-scanner"></div>
-          </div>
-          <div className="corner-decoration-enhanced top-right">
-            <div className="corner-scanner"></div>
-          </div>
-          <div className="corner-decoration-enhanced bottom-left">
-            <div className="corner-scanner"></div>
-          </div>
-          <div className="corner-decoration-enhanced bottom-right">
-            <div className="corner-scanner"></div>
-          </div>
-
-          {/* Console Border Frame with Enhanced Effects */}
-          <div className="console-frame relative w-full h-full">
-            {/* Enhanced Console Header */}
-            <div className="console-header">
-              <div className="console-title">
-                <div className="flex items-center gap-3">
-                  <div className="console-dots">
-                    <div className="console-dot red"></div>
-                    <div className="console-dot yellow"></div>
-                    <div className="console-dot green"></div>
-                  </div>
-                  <span className="text-cyan-400 font-mono text-sm font-bold tracking-wider">
-                    TRANSFORMBOT TERMINAL v2.1.7
-                  </span>
-                  <div className="terminal-badge">SECURE</div>
+          {/* Top HUD Bar */}
+          <div className="top-hud-bar absolute top-0 left-0 right-0 z-20">
+            <div className="hud-frame-panel top-panel">
+              <div className="flex justify-between items-center">
+                <div className="hud-section">
+                  <div className="hud-label">TRANSFORMBOT</div>
+                  <div className="hud-value">NEURAL INTERFACE v2.1</div>
                 </div>
-                <div className="flex items-center gap-4 text-xs font-mono">
-                  <div className="connection-status">
-                    <span className="text-blue-400">SSH://MATRIX.NEURAL.NET</span>
-                    <div className="connection-indicator">
-                      <span className="text-green-400 animate-pulse">●</span>
-                      <span className="text-xs text-gray-400 ml-1">ENCRYPTED</span>
-                    </div>
-                  </div>
-                  <div className="system-time text-gray-400">
-                    {new Date().toLocaleTimeString()}
-                  </div>
+                <div className="hud-section text-center">
+                  <div className="hud-label">STATUS</div>
+                  <div className="hud-value text-green-400">ONLINE • ACTIVE</div>
+                </div>
+                <div className="hud-section text-right">
+                  <div className="hud-label">PROTOCOL</div>
+                  <div className="hud-value text-cyan-400">MATRIX LINK</div>
                 </div>
               </div>
-              <div className="header-scanline"></div>
-            </div>
-
-            {/* Enhanced Spline 3D Scene with Advanced UI */}
-            <div className="spline-container relative w-full h-full console-content">
-              {/* Holographic Border Effect */}
-              <div className="holographic-border"></div>
-              
-              <Spline
-                scene="https://prod.spline.design/WQME7CXYm2jadMJj/scene.splinecode"
-                className="w-full h-full rounded-lg"
-              />
-              
-              {/* Advanced HUD Elements with Enhanced Design */}
-              <div className="absolute top-6 left-6 hud-panel-enhanced">
-                <div className="hud-header">
-                  <div className="hud-icon">⚡</div>
-                  <div className="hud-title">SYSTEM STATUS</div>
-                  <div className="hud-indicator online"></div>
-                </div>
-                <div className="hud-content space-y-3">
-                  <div className="status-item">
-                    <Activity className="w-4 h-4 text-green-400" />
-                    <span>CORE SYSTEMS</span>
-                    <div className="status-bar">
-                      <div className="status-fill green" style={{width: '98%'}}></div>
-                    </div>
-                    <span className="status-value">98%</span>
-                  </div>
-                  <div className="status-item">
-                    <Zap className="w-4 h-4 text-blue-400" />
-                    <span>NEURAL LINK</span>
-                    <div className="status-bar">
-                      <div className="status-fill blue" style={{width: '87%'}}></div>
-                    </div>
-                    <span className="status-value">87%</span>
-                  </div>
-                  <div className="status-item">
-                    <Target className="w-4 h-4 text-yellow-400" />
-                    <span>TRANSFORM MODE</span>
-                    <div className="status-bar">
-                      <div className="status-fill yellow" style={{width: '100%'}}></div>
-                    </div>
-                    <span className="status-value">RDY</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute top-6 right-6 hud-panel-enhanced text-right">
-                <div className="hud-header justify-end">
-                  <div className="hud-indicator active"></div>
-                  <div className="hud-title">NETWORK PROTOCOL</div>
-                  <div className="hud-icon">🌐</div>
-                </div>
-                <div className="hud-content space-y-3">
-                  <div className="network-item">
-                    <Globe className="w-4 h-4 text-cyan-400" />
-                    <span>MATRIX v2.1.7</span>
-                    <div className="ping-indicator"></div>
-                  </div>
-                  <div className="network-item">
-                    <Wifi className="w-4 h-4 text-green-400" />
-                    <span>CONNECTION</span>
-                    <span className="text-green-400 font-bold">STABLE</span>
-                  </div>
-                  <div className="network-item">
-                    <Activity className="w-4 h-4 text-blue-400" />
-                    <span>LATENCY</span>
-                    <span className="latency-value">12ms</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute bottom-6 left-6 hud-panel-enhanced">
-                <div className="hud-header">
-                  <div className="hud-icon">🏢</div>
-                  <div className="hud-title">CORPORATION</div>
-                  <div className="hud-indicator secure"></div>
-                </div>
-                <div className="hud-content space-y-1">
-                  <div className="text-cyan-400 font-bold">© 2025 TRANSFORMBOT</div>
-                  <div className="text-blue-300">CYBERNETIC DIVISION</div>
-                  <div className="text-xs text-gray-400">LICENSE: NEURAL-X1</div>
-                </div>
-              </div>
-
-              <div className="absolute bottom-6 right-6 hud-panel-enhanced text-right">
-                <div className="hud-header justify-end">
-                  <div className="hud-indicator interactive"></div>
-                  <div className="hud-title">INTERACTION</div>
-                  <div className="hud-icon">🎮</div>
-                </div>
-                <div className="hud-content space-y-1">
-                  <div className="text-cyan-400 font-bold">DRAG • ZOOM • EXPLORE</div>
-                  <div className="text-blue-300">NEURAL INTERFACE</div>
-                  <div className="text-xs text-gray-400">HAPTIC FEEDBACK: ON</div>
-                </div>
-              </div>
-
-              {/* Console Lines Overlay */}
-              <div className="console-lines"></div>
             </div>
           </div>
+
+          {/* Left Side HUD Panel */}
+          <div className="left-hud-panel absolute left-0 top-16 bottom-16 z-20">
+            <CloseableHUDPanels />
+          </div>
+
+          {/* Right Side HUD Panel */}
+          <div className="right-hud-panel absolute right-0 top-16 bottom-16 z-20">
+            <div className="hud-frame-panel side-panel h-full">
+              <div className="hud-section mb-4">
+                <div className="hud-label">SYSTEM METRICS</div>
+              </div>
+              <div className="space-y-3">
+                <div className="metric-row">
+                  <span>CPU LOAD</span>
+                  <div className="metric-bar">
+                    <div className="metric-fill" style={{width: '78%'}}></div>
+                  </div>
+                  <span className="text-green-400">78%</span>
+                </div>
+                <div className="metric-row">
+                  <span>MEMORY</span>
+                  <div className="metric-bar">
+                    <div className="metric-fill" style={{width: '65%'}}></div>
+                  </div>
+                  <span className="text-blue-400">65%</span>
+                </div>
+                <div className="metric-row">
+                  <span>NEURAL NET</span>
+                  <div className="metric-bar">
+                    <div className="metric-fill" style={{width: '92%'}}></div>
+                  </div>
+                  <span className="text-yellow-400">92%</span>
+                </div>
+              </div>
+              
+              <div className="hud-section mt-6 mb-4">
+                <div className="hud-label">CONNECTIONS</div>
+              </div>
+              <div className="space-y-2 text-xs">
+                <div className="flex justify-between">
+                  <span>QUANTUM LINK</span>
+                  <span className="text-green-400">STABLE</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>DATA STREAM</span>
+                  <span className="text-blue-400">12ms</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>ENCRYPTION</span>
+                  <span className="text-purple-400">AES-256</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom HUD Bar */}
+          <div className="bottom-hud-bar absolute bottom-0 left-0 right-0 z-20">
+            <div className="hud-frame-panel bottom-panel">
+              <div className="flex justify-between items-center text-xs">
+                <div className="hud-section">
+                  <span className="text-gray-400">© 2025 TRANSFORMBOT INDUSTRIES</span>
+                </div>
+                <div className="hud-section">
+                  <span className="text-cyan-400">INTERACT: DRAG • ZOOM • EXPLORE</span>
+                </div>
+                <div className="hud-section">
+                  <span className="text-blue-400">LATENCY: 12ms</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Central Spline Frame */}
+          <div className="spline-frame absolute inset-0 z-10">
+            <div className="spline-container">
+              <div className="spline-border-frame">
+                <Spline
+                  scene="https://prod.spline.design/WQME7CXYm2jadMJj/scene.splinecode"
+                  className="w-full h-full rounded-lg"
+                />
+                
+                {/* Frame Corner Indicators */}
+                <div className="frame-corner top-left"></div>
+                <div className="frame-corner top-right"></div>
+                <div className="frame-corner bottom-left"></div>
+                <div className="frame-corner bottom-right"></div>
+                
+                {/* Scan Lines Overlay */}
+                <div className="scan-lines-overlay"></div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
