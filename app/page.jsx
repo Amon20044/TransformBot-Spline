@@ -1,6 +1,6 @@
 // Server-side page component
 import Spline from '@splinetool/react-spline';
-import { Cpu } from 'lucide-react';
+import { Cpu, Bolt, Wrench, Cable, FileHeart, Rotate3d } from 'lucide-react';
 import { CloseableHUDPanels } from './components/CloseableHUDPanels';
 
 export default function Home() {
@@ -45,11 +45,11 @@ export default function Home() {
               ◤ NEURAL INTERFACE SYSTEM ◥
             </div>
             <div className="loading-messages text-yellow-400 font-mono text-lg">
-              <div className="message message-1">⚡ INITIALIZING NEURAL MATRIX...</div>
-              <div className="message message-2">🔧 CALIBRATING TRANSFORMATION PROTOCOLS...</div>
-              <div className="message message-3">🌐 ESTABLISHING QUANTUM LINK...</div>
-              <div className="message message-4">💎 LOADING CYBERNETIC INTERFACE...</div>
-              <div className="message message-5">✨ TRANSFORMATION SEQUENCE READY</div>
+              <div className="message message-1"><Bolt className="w-8 h-8 text-yellow-400"/> INITIALIZING NEURAL MATRIX...</div>
+              <div className="message message-2"><Wrench className="w-8 h-8 text-yellow-400"/>CALIBRATING TRANSFORMATION PROTOCOLS...</div>
+              <div className="message message-3"><Cable className="w-8 h-8 text-yellow-400"/>ESTABLISHING QUANTUM LINK...</div>
+              <div className="message message-4"><FileHeart className="w-8 h-8 text-yellow-400"/>LOADING CYBERNETIC INTERFACE...</div>
+              <div className="message message-5"><Rotate3d className="w-8 h-8 text-yellow-400"/>TRANSFORMATION SEQUENCE READY</div>
             </div>
           </div>
 
@@ -109,7 +109,7 @@ export default function Home() {
       </div>
 
       {/* Main Content - Framed Spline Scene with HUD Overlays */}
-      <div className="main-content opacity-0 relative w-full h-full p-6">
+      <div className="main-content opacity-0 relative w-full h-full">
         {/* Main HUD Frame Container */}
         <div className="hud-frame-container relative w-full h-full">
           
@@ -206,7 +206,7 @@ export default function Home() {
           </div>
 
           {/* Central Spline Frame */}
-          <div className="spline-frame absolute inset-0 z-10">
+          <div className="spline-frame absolute z-10">
             <div className="spline-container">
               <div className="spline-border-frame">
                 <Spline

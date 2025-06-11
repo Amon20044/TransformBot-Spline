@@ -9,6 +9,14 @@
   will-change: auto;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+}
 .loading-screen, .main-content {
   transform: translateZ(0);
   backface-visibility: hidden;
@@ -306,7 +314,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 0px;
 }
 
 .hud-title {
@@ -443,7 +451,6 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
   background: linear-gradient(90deg, 
     transparent, 
     rgba(59, 130, 246, 0.8), 
@@ -460,6 +467,8 @@
 
 /* Top Panel Styling */
 .top-panel {
+  position: sticky;
+  top: 0;
   border-radius: 0 0 12px 12px;
   border-top: none;
   margin: 0 60px;
@@ -467,9 +476,11 @@
 
 /* Bottom Panel Styling */
 .bottom-panel {
-  border-radius: 12px 12px 0 0;
+  border-radius: 12px ;
   border-bottom: none;
   margin: 0 60px;
+  position: sticky;
+  bottom: 0;
 }
 
 /* Side Panel Styling */
@@ -560,15 +571,19 @@
   100% { left: 100%; }
 }
 
-/* Spline Frame Container */
-.spline-frame {
-  margin: 80px 260px 80px 260px;
+.spline-frame{
+  width: 100vw;
+  height: 100vh;
+  position:absolute;
+  display: flex;
+  justify-content: start;
+  align-items: start;
 }
+/* Spline Frame Container */
 
 .spline-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
 .spline-border-frame {
@@ -743,21 +758,21 @@
 
 /* HUD Panel Positioning */
 .top-hud-bar {
-  height: 70px;
+  height: auto;
 }
 
 .bottom-hud-bar {
-  height: 70px;
+  height: auto;
 }
 
 .left-hud-panel, .right-hud-panel {
-  width: 250px;
+  width: auto;
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .spline-frame {
-    margin: 60px 20px;
+    margin: 10px 6px;
   }
   
   .left-hud-panel, .right-hud-panel {
@@ -765,26 +780,20 @@
   }
   
   .top-panel, .bottom-panel {
-    margin: 0 20px;
+    margin: 0 8px;
     font-size: 10px;
   }
   
-  .hud-frame-panel {
-    padding: 12px;
-  }
-  
   .side-panel {
-    width: 200px;
+    width: auto;
   }
 }
 
 @media (max-width: 480px) {
-  .spline-frame {
-    margin: 40px 10px;
-  }
+
   
   .top-panel, .bottom-panel {
-    margin: 0 10px;
+    margin: 0 4px;
     font-size: 9px;
   }
   
