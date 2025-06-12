@@ -211,7 +211,7 @@ export default function Home() {
               <div className="spline-border-frame">
                 <Spline
                   scene="https://prod.spline.design/WQME7CXYm2jadMJj/scene.splinecode"
-                  className="w-full h-full rounded-lg"
+                  className="w-screen h-screen rounded-lg"
                 />
                 
                 {/* Frame Corner Indicators */}

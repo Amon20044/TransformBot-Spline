@@ -2042,7 +2042,7 @@ html, body {
 
 @media (max-width: 480px) {
   .spline-frame {
-    margin: 40px 10px;
+    margin: 6px 2px;
   }
   
   .top-panel, .bottom-panel {
