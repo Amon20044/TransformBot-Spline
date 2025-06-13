@@ -210,7 +210,7 @@ export default function Home() {
             <div className="spline-container">
               <div className="spline-border-frame">
                 <Spline
-                  scene="https://prod.spline.design/ZkNV8a7tlYNewcgo/scene.splinecode"
+                  scene="https://prod.spline.design/no2TF-PIICSPnVho/scene.splinecode"
                   className="w-screen h-screen rounded-lg"
                 />
                 
