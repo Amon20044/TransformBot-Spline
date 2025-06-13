@@ -731,24 +731,8 @@ html, body {
   width: 3px;
   height: 20px;
 }
-
-/* Scan Lines Overlay */
-.scan-lines-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 3px,
-    rgba(59, 130, 246, 0.02) 3px,
-    rgba(59, 130, 246, 0.02) 6px
-  );
-  pointer-events: none;
-  z-index: 5;
-  animation: scanMove 8s linear infinite;
+.back{
+  background-color: #000000;
 }
 
 @keyframes scanMove {

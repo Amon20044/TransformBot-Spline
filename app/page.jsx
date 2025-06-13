@@ -193,10 +193,10 @@ export default function Home() {
             <div className="hud-frame-panel bottom-panel">
               <div className="flex justify-between items-center text-xs">
                 <div className="hud-section">
-                  <span className="text-gray-400">© 2025 TRANSFORMBOT INDUSTRIES</span>
+                  <span className="text-gray-400">© 2025 AMON SHARMA</span>
                 </div>
                 <div className="hud-section">
-                  <span className="text-cyan-400">INTERACT: DRAG • ZOOM • EXPLORE</span>
+                  <span className="text-cyan-400">INTERACT: DRAG • RUN • EXPLORE</span>
                 </div>
                 <div className="hud-section">
                   <span className="text-blue-400">LATENCY: 12ms</span>
