@@ -4,7 +4,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "TransformBot | Cybernetic Interface",
+  title: "Amon Sharma",
   description: "Advanced cyberpunk 3D robot transformation interface powered by AI",
 };
 

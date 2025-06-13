@@ -7,5 +7,6 @@ export default function Home() {
         scene="https://prod.spline.design/no2TF-PIICSPnVho/scene.splinecode" 
       />
     </main>
+    
   );
 }
