@@ -1,11 +1,11 @@
 // Server-side page component
-import Spline from '@splinetool/react-spline';
+import Spline from '@splinetool/react-spline/next';
 import { Cpu, Bolt, Wrench, Cable, FileHeart, Rotate3d } from 'lucide-react';
 import { CloseableHUDPanels } from './components/CloseableHUDPanels';
 
 export default function Home() {
   return (
-    <div className="relative w-[100vw] h-[100vh] bg-black overflow-hidden">
+    <main className="relative w-[100vw] h-[100vh] bg-black overflow-hidden">
       {/* Enhanced CSS-Only Loading Screen - Disappears after 6 seconds */}
       <div className="loading-screen fixed inset-0 z-50 bg-black flex items-center justify-center">
         {/* Matrix Rain Background */}
@@ -228,6 +228,6 @@ export default function Home() {
 
         </div>
       </div>
-    </div>
+    </main>
   );
 }
