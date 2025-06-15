@@ -4,6 +4,7 @@
 
 * {
   will-change: auto;
+  background-color: #fffaef;
 }
 
 body {
@@ -15,3 +16,4 @@ body {
   font-family: 'Courier New', monospace;
   background-color: #fffaef;
 }
+
