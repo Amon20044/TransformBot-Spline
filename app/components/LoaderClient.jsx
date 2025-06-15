@@ -110,10 +110,9 @@ export default function OptimizedLoader() {
 
         .loader-box {
           background: white;
-          width: clamp(320px, 80vw, 640px); /* Responsive width */
-          height: clamp(240px, 50vh, 360px); /* Responsive height */
+          width: 60vw;
+          height: 70vh;
           border-radius: 20px;
-          box-shadow: 0 30px 60px -15px rgba(234, 88, 12, 0.3);
           transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.2s ease-out;
           transform-origin: center center;
           border: 1px solid rgba(251, 146, 60, 0.15);
@@ -136,7 +135,6 @@ export default function OptimizedLoader() {
           height: 28px;
           background: linear-gradient(45deg, #FB923C, #EA580C);
           border-radius: 8px;
-          box-shadow: 0 3px 6px rgba(234, 88, 12, 0.25);
           animation: pulse 2s infinite ease-in-out;
         }
 
@@ -212,16 +210,12 @@ export default function OptimizedLoader() {
           50% { transform: scale(1.1); }
         }
 
-        @keyframes textGlow {
-          0% { text-shadow: 0 0 5px rgba(234, 88, 12, 0.3); }
-          100% { text-shadow: 0 0 15px rgba(234, 88, 12, 0.6); }
-        }
 
         /* Enhanced Responsive Design */
         @media (max-width: 768px) {
           .loader-box {
-            width: clamp(280px, 90vw, 360px);
-            height: clamp(200px, 45vh, 280px);
+            width: 80vw;
+            height: 70vh;
           }
           
           .main-title {
