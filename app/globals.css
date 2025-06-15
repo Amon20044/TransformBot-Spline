@@ -11,11 +11,12 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  min-height: 500vh; /* Allow full scroll */
+  min-height: 1000vh; /* Allow full scroll */
   overflow-x: hidden;
   font-family: 'Courier New', monospace;
   background-color: #000;
 }
+
 
 .spline-container{
   top:0;
