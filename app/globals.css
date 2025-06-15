@@ -10,7 +10,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  min-height: 5000px; /* Long scroll space */
+  min-height: auto; /* Long scroll space */
   overflow-x: hidden;
   font-family: 'Courier New', monospace;
   background-color: #fffaef;
