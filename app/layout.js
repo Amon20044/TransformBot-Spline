@@ -9,10 +9,10 @@ const inter = Inter({
   preload: true,
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "amon-sharma-3d.vercel.app";
 
 // Centralized image constants
-const ogImage = `${siteUrl}/og-image.jpg`;
+const ogImage = `${siteUrl}/og-image.png`;
 const favicon = "/favicon.ico";
 const shortcutIcon = "/favicon-32x32.png";
 const appleIcon = "/apple-touch-icon.png";
