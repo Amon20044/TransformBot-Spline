@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -68,7 +69,10 @@ export default function RootLayout({ children }){
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="bg-black text-white antialiased">{children}</body>
+      <body className="bg-black text-white antialiased">
+      <Analytics/>
+      {children}
+      </body>
     </html>
   );
 }
