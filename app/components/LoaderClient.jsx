@@ -7,7 +7,7 @@ export default function OptimizedLoader() {
   const [isDestroyed, setIsDestroyed] = useState(false);
 
   useEffect(() => {
-    const loadingDuration = 4000; // Slightly faster for better UX
+    const loadingDuration = 1000; // Slightly faster for better UX
     const interval = 50; // Smoother progress updates
     const increment = 100 / (loadingDuration / interval);
 
@@ -34,10 +34,11 @@ export default function OptimizedLoader() {
 
     // Phase 1: Full-screen zoom with easing
     if (loaderBox) {
-      loaderBox.style.transform = 'scale(2.5)'; // Larger scale for full coverage
+      loaderBox.style.width = '100vw';// Larger scale for full coverage
+      loaderBox.style.height = '100vh';// Larger scale for full coverage
       loaderBox.style.opacity = '0';
-      loaderBox.style.transition = 'transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.2s ease-out';
-      
+      loaderBox.style.transition = 'all 2s cubic-bezier(0.4, 0, 0.2, 1)'; // Smooth easing
+
     }
 
     // Phase 2: Show Spline container with fade-in
@@ -66,20 +67,25 @@ export default function OptimizedLoader() {
       <div className="loader-box" id="loaderBox">
         <div className="header">
           <div className="brand">
-            <div className="brand-icon"></div>
+            <div className="brand-icon">
+              <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g >
+                  <path d="M24.3605 13.0225C23.8637 12.9412 23.3537 12.896 22.8345 12.896C22.3154 12.896 21.8046 12.9412 21.3086 13.0225C22.2607 10.8704 22.803 8.49637 22.8303 6H22.8394C22.8668 8.49637 23.409 10.8697 24.3612 13.0225H24.3605Z" fill="#EA580C" />
+                  <path d="M19.7906 19.512C20.7841 19.3493 21.8042 19.2589 22.8432 19.2589C23.8822 19.2589 24.9023 19.3493 25.8957 19.512C28.1559 24.6404 31.5777 29.1491 35.8304 32.7122C36.4925 32.0474 37.1202 31.3521 37.6681 30.5913C32.5564 26.8384 28.4649 21.7921 25.8866 15.9406C24.8932 15.7779 23.8731 15.6875 22.8341 15.6875C21.795 15.6875 20.775 15.7779 19.7815 15.9406C17.2032 21.7914 13.1117 26.8377 8 30.5913C8.55068 31.3549 9.18123 32.053 9.84611 32.7206C14.103 29.1561 17.529 24.6445 19.7906 19.5127V19.512Z" fill="#EA580C" />
+                  <circle cx="23.3571" cy="23.3571" r="22.0595" stroke="#EA580C" stroke-width="2.99524" />
+                </g>
+              </svg>
+            </div>
             <span className="brand-text">Amon Sharma</span>
           </div>
         </div>
-        
+
         <div className="content">
           <h1 className="main-title">
-            WE CREATE<br />
-            EYE-OPENING<br />
-            EXPERIENCES
+            CREATIVE DESIGNER<br />
           </h1>
-          
+
           <div className="bottom-section">
-            <div className="loading-text">Loading{'.'.repeat(Math.floor(progress / 25) % 4)}</div>
             <div className="percentage">{Math.floor(progress)}%</div>
           </div>
         </div>
@@ -104,12 +110,12 @@ export default function OptimizedLoader() {
           align-items: center;
           justify-content: center;
           z-index: 10000; /* Higher z-index for prominence */
-          background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 25%, #FED7AA 50%, #FB923C 75%, #EA580C 100%);
+          background: rgb(254, 124, 17);
           transition: opacity 0.5s ease-out;
         }
 
         .loader-box {
-          background: white;
+          background: #FFFAEF;
           width: 60vw;
           height: 70vh;
           border-radius: 20px;
@@ -131,30 +137,35 @@ export default function OptimizedLoader() {
         }
 
         .brand-icon {
-          width: 28px;
-          height: 28px;
-          background: linear-gradient(45deg, #FB923C, #EA580C);
+          width: 20px;
+          height: 20px;
           border-radius: 8px;
           animation: pulse 2s infinite ease-in-out;
         }
 
         .brand-text {
+        font-family: 'Bebas Neue';
           color: #EA580C;
           font-size: clamp(16px, 2.5vw, 20px);
-          font-weight: 700;
+          font-weight: 500;
           letter-spacing: 0.03em;
         }
 
         .content {
           padding: 0 clamp(20px, 5vw, 32px) clamp(16px, 4vw, 32px);
+          display: flex;
+          height: 90%;
+          flex-direction: column;
+          align-items: stretch;
+          justify-content: space-between;
         }
 
         .main-title {
-          font-family: 'Bebas Neue', cursive;
+          font-family: 'Bebas Neue', inter;
           font-size: clamp(36px, 10vw, 72px);
           font-weight: 400;
           line-height: 0.95;
-          background: linear-gradient(135deg, #EA580C, #FB923C);
+          background: linear-gradient(135deg,rgb(233, 92, 16), #FB923C);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -164,6 +175,7 @@ export default function OptimizedLoader() {
         }
 
         .bottom-section {
+          bottom: 0;
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
@@ -178,7 +190,7 @@ export default function OptimizedLoader() {
         }
 
         .percentage {
-          font-family: 'Bebas Neue', cursive;
+          font-family: 'Bebas Neue', inter;
           font-size: clamp(48px, 12vw, 80px);
           font-weight: 400;
           background: linear-gradient(135deg, #EA580C, #FB923C);
@@ -186,6 +198,7 @@ export default function OptimizedLoader() {
           -webkit-text-fill-color: transparent;
           background-clip: text;
           line-height: 1;
+          width: 100%;
           min-width: clamp(80px, 20vw, 140px);
           text-align: right;
         }
