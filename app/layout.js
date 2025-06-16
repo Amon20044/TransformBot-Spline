@@ -9,7 +9,7 @@ const inter = Inter({
   preload: true,
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "amon-sharma-3d.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://amon-sharma-3d.vercel.app";
 
 // Centralized image constants
 const ogImage = `${siteUrl}/og-image.png`;
