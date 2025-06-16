@@ -7,7 +7,7 @@ export default function OptimizedLoader() {
   const [isDestroyed, setIsDestroyed] = useState(false);
 
   useEffect(() => {
-    const loadingDuration = 8000; // Slightly faster for better UX
+    const loadingDuration = 7000; // Slightly faster for better UX
     const interval = 50; // Smoother progress updates
     const increment = 100 / (loadingDuration / interval);
 
