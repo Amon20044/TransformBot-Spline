@@ -1,7 +1,8 @@
 
+
 import Spline from '@splinetool/react-spline/next';
 import OptimizedLoader from './components/LoaderClient';
-export default function Home() {
+export default async function Home() {
   
   return (
     <div className="relative w-screen bg-[#fffaef] h-screen overflow-x-hidden">

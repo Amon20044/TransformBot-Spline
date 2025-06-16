@@ -76,13 +76,14 @@ export default function OptimizedLoader() {
                 </g>
               </svg>
             </div>
-            <span className="brand-text">Amon Sharma</span>
+            <span className="brand-text">SUBMISSION: AMON SHARMA</span>
           </div>
         </div>
 
         <div className="content">
           <h1 className="main-title">
             CREATIVE DESIGNER<br />
+            SPLINE X CONTRA
           </h1>
 
           <div className="bottom-section">
@@ -110,7 +111,7 @@ export default function OptimizedLoader() {
           align-items: center;
           justify-content: center;
           z-index: 10000; /* Higher z-index for prominence */
-          background: rgb(254, 124, 17);
+          background: linear-gradient(-55deg,rgb(233, 92, 16), #FB923C);
           transition: opacity 0.5s ease-out;
         }
 
