@@ -1,78 +1,93 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
+// Initialize Inter font with optimized settings
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   preload: true,
+  variable: "--font-inter", // CSS variable for better maintainability
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://amon-sharma-3d.vercel.app";
+// Environment variable with fallback
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://amon-sharma-3d.vercel.app";
 
 // Centralized image constants
 const ogImage = `${siteUrl}/og-image.png`;
-const favicon = "/favicon.ico";
-const shortcutIcon = "/favicon-32x32.png";
-const appleIcon = "/apple-touch-icon.png";
 
+// Optimized metadata configuration
 export const metadata = {
-  title: "Amon Sharma | Transformer 3D Portfolio",
-  description: "Explore the futuristic 3D web portfolio of Amon Sharma, powered by Spline and Three.js.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Amon Sharma | Transformer 3D Portfolio",
+    template: "%s | Amon Sharma",
+  },
+  description: "Explore Amon Sharma's futuristic 3D web portfolio powered by Spline, showcasing innovative web development.",
   keywords: [
-    "Amon Sharma", "3D portfolio", "Transformer website", "Three.js portfolio",
-    "Spline", "React developer", "Frontend engineer", "Creative developer", "WebGL"
+    "Amon Sharma",
+    "3D portfolio",
+    "Transformer website",
+    "Three.js portfolio",
+    "Spline",
+    "React developer",
+    "Frontend engineer",
+    "Creative developer",
+    "WebGL",
   ],
   authors: [{ name: "Amon Sharma" }],
   creator: "Amon Sharma",
-  metadataBase: new URL(siteUrl),
   openGraph: {
     title: "Amon Sharma | Transformer 3D Portfolio",
-    description: "Experience a one-of-a-kind Transformer-themed 3D portfolio built with modern web tech.",
+    description: "Experience a unique Transformer-themed 3D portfolio built with modern web technologies.",
     url: siteUrl,
     siteName: "Amon Sharma",
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "Amon Sharma Transformer 3D Portfolio",
-      },
-    ],
+    images: [{
+      url: ogImage,
+      width: 1200,
+      height: 630,
+      alt: "Amon Sharma Transformer 3D Portfolio",
+    }],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Amon Sharma | Transformer 3D Portfolio",
-    description: "A futuristic 3D portfolio experience using Three.js and Spline.",
+    description: "A Transformer-themed 3D portfolio experience using Spline.",
     images: [ogImage],
-    creator: "@yourhandle", // Optional
   },
   icons: {
-    icon: favicon,
-    shortcut: shortcutIcon,
-    apple: appleIcon,
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
-  themeColor: "#FFFA7F",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FFFA7F" },
+    { media: "(prefers-color-scheme: dark)", color: "#1A1A1A" },
+  ],
+  alternates: {
+    canonical: siteUrl,
+  },
 };
 
-export default function RootLayout({ children }){
+export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={inter.variable}>
       <head>
         <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <link rel="canonical" href={siteUrl} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+        {/* Preconnect only to critical resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="bg-black text-white antialiased">
-      <Analytics/>
-      {children}
+        <Analytics />
+        {children}
       </body>
     </html>
   );
 }
+
+// Optional: Enable static rendering for better performance
+export const dynamic = "force-static";
