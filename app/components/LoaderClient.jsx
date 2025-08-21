@@ -76,14 +76,14 @@ export default function OptimizedLoader() {
                 </g>
               </svg>
             </div>
-            <span className="brand-text">SUBMISSION: AMON SHARMA</span>
+            <span className="brand-text">PORTFOLIO</span>
           </div>
         </div>
 
         <div className="content">
           <h1 className="main-title">
-            CREATIVE DESIGNER<br />
-            SPLINE X CONTRA
+            CREATIVE DEV & DESIGNER<br />
+            AMON SHARMA
           </h1>
 
           <div className="bottom-section">
